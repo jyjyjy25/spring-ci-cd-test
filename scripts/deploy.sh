@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ROOT_PATH="/home/ubuntu/spring-github-action"
-JAR_NAME=$(ls ROOT_PATH/build/libs/ | grep 'SNAPSHOT.jar' | tail -n 1)
-JAR_PATH=ROOT_PATH/build/libs/$JAR_NAME
+JAR_NAME=$(ls $ROOT_PATH/build/libs/ | grep 'SNAPSHOT.jar' | tail -n 1)
+JAR_PATH=$ROOT_PATH/build/libs/$JAR_NAME
 STOP_LOG="$ROOT_PATH/stop.log"
 SERVICE_PID=$(pgrep -f $JAR) # 실행중인 Spring 서버의 PID
 
