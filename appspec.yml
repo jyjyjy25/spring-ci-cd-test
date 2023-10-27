@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+
+files:
+  - source:  /
+    destination: /home/ubuntu/spring-github-action
+    overwrite: yes
+
+permissions:
+  - object: /
+    owner: ubuntu
+    group: ubuntu
+
+hooks:
+  ApplicationStart:
+    - location: deploy.sh
+      timeout: 60
+      runas: ubuntu
